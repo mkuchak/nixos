@@ -1,0 +1,611 @@
+/*
+ * Ctrl+Shift+P > shortcuts
+ * Preferences: Open Keyboard Shortcuts (JSON)
+ */
+ [
+  // Move the cursor and select between CamelCase words
+  {
+    "key": "alt+right",
+    "command": "cursorWordPartRight",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "alt+left",
+    "command": "cursorWordPartLeft",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "alt+shift+right",
+    "command": "cursorWordPartRightSelect",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "alt+shift+left",
+    "command": "cursorWordPartLeftSelect",
+    "when": "editorTextFocus"
+  },
+  // Delete the rest of the word forward or backward
+  {
+    "key": "alt+delete",
+    "command": "deleteWordRight",
+    "when": "textInputFocus && !editorReadonly"
+  },
+  {
+    "key": "alt+backspace",
+    "command": "deleteWordLeft",
+    "when": "textInputFocus && !editorReadonly"
+  },
+  // Reverse the order of the lines
+  {
+    "key": "ctrl+shift+up",
+    "command": "editor.action.moveLinesUpAction",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+shift+down",
+    "command": "editor.action.moveLinesDownAction",
+    "when": "editorTextFocus"
+  },
+  // Search for sentences equal to the current selection
+  {
+    "key": "ctrl+shift+d",
+    "command": "editor.action.addSelectionToNextFindMatch",
+    "when": "editorFocus"
+  },
+  // Duplicate current line with just one shortcut
+  {
+    "key": "ctrl+d",
+    "command": "editor.action.copyLinesDownAction",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+d",
+    "command": "-editor.action.addSelectionToNextFindMatch",
+    "when": "editorFocus"
+  },
+  {
+    "key": "shift+alt+up",
+    "command": "-editor.action.copyLinesUpAction",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "shift+alt+down",
+    "command": "-editor.action.copyLinesDownAction",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  // Change the programming language of the current file
+  {
+    "key": "ctrl+j",
+    "command": "workbench.action.editor.changeLanguageMode",
+    "when": "textInputFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "-workbench.action.togglePanel"
+  },
+  // Select up and down, vertically
+  {
+    "key": "ctrl+alt+down",
+    "command": "cursorColumnSelectDown",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "ctrl+alt+up",
+    "command": "cursorColumnSelectUp",
+    "when": "textInputFocus"
+  },
+  // Create a block comment in the selected part like /* some selected part */
+  {
+    "key": "ctrl+shift+/",
+    "command": "editor.action.blockComment",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+shift+;",
+    "command": "editor.action.blockComment",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  // Comment on selected lines
+  {
+    "key": "ctrl+/",
+    "command": "editor.action.commentLine",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+;",
+    "command": "editor.action.commentLine",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  // Delete the line without copying to the clipboard
+  {
+    "key": "ctrl+shift+x",
+    "command": "editor.action.deleteLines",
+    "when": "textInputFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+shift+k",
+    "command": "-editor.action.deleteLines",
+    "when": "textInputFocus && !editorReadonly"
+  },
+  // Move the current tab to the right or to the left
+  {
+    "key": "ctrl+alt+right",
+    "command": "workbench.action.moveEditorRightInGroup",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "alt+right",
+    "command": "-workbench.action.terminal.focusNextPane",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+alt+left",
+    "command": "workbench.action.moveEditorLeftInGroup",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "alt+left",
+    "command": "-workbench.action.terminal.focusPreviousPane",
+    "when": "terminalFocus"
+  },
+  // Move the tab to a different screen split, whether left, right, up, or down
+  {
+    "key": "ctrl+shift+alt+up",
+    "command": "workbench.action.moveEditorToAboveGroup",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+shift+alt+down",
+    "command": "workbench.action.moveEditorToBelowGroup",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+shift+alt+left",
+    "command": "workbench.action.moveEditorToLeftGroup",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+shift+alt+right",
+    "command": "workbench.action.moveEditorToRightGroup",
+    "when": "editorTextFocus"
+  },
+  // Create a new file (install patbenatar.advanced-new-file extension)
+  {
+    "key": "ctrl+n",
+    "command": "extension.advancedNewFile"
+  },
+  {
+    "key": "ctrl+alt+n",
+    "command": "-extension.advancedNewFile"
+  },
+  {
+    "key": "ctrl+n",
+    "command": "-workbench.action.files.newUntitledFile"
+  },
+  // Create a new empty tab
+  {
+    "key": "ctrl+t",
+    "command": "workbench.action.files.newUntitledFile"
+  },
+  {
+    "key": "ctrl+t",
+    "command": "-workbench.action.showAllSymbols"
+  },
+  // Go to the previous or next tab (similar to browsers)
+  {
+    "key": "ctrl+tab",
+    "command": "workbench.action.nextEditor"
+  },
+  {
+    "key": "ctrl+shift+tab",
+    "command": "workbench.action.previousEditor"
+  },
+  // Switch between tabs (similar to using Alt+Tab in Windows)
+  {
+    "key": "alt+q",
+    "command": "workbench.action.quickOpenPreviousRecentlyUsedEditor"
+  },
+  {
+    "key": "alt+q",
+    "command": "workbench.action.quickOpenNavigateNextInEditorPicker",
+    "when": "inEditorsPicker && inQuickOpen"
+  },
+  {
+    "key": "alt+shift+q",
+    "command": "workbench.action.quickOpenLeastRecentlyUsedEditor"
+  },
+  {
+    "key": "alt+shift+q",
+    "command": "workbench.action.quickOpenNavigatePreviousInEditorPicker",
+    "when": "inEditorsPicker && inQuickOpen"
+  },
+  // Toggle to hide and show the left and bottom sidebar
+  {
+    "key": "shift+alt+b",
+    "command": "workbench.action.toggleStatusbarVisibility"
+  },
+  {
+    "key": "ctrl+shift+b",
+    "command": "workbench.action.toggleActivityBarVisibility"
+  },
+  {
+    "key": "ctrl+shift+b",
+    "command": "-workbench.action.tasks.build"
+  },
+  {
+    "key": "ctrl+alt+b",
+    "command": "workbench.action.tasks.build"
+  },
+  // Open, hide, minimize and maximize the terminal
+  {
+    "key": "ctrl+shift+enter",
+    "command": "workbench.action.toggleMaximizedPanel"
+  },
+  {
+    "key": "shift+enter",
+    "command": "workbench.action.terminal.toggleTerminal"
+  },
+  {
+    "key": "shift+enter",
+    "command": "workbench.action.focusActiveEditorGroup",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+enter",
+    "command": "workbench.action.togglePanel"
+  },
+  {
+    "key": "ctrl+enter",
+    "command": "-github.copilot.generate",
+    "when": "editorTextFocus"
+  },
+  // Close terminal if selected
+  {
+    "key": "ctrl+shift+d",
+    "command": "workbench.action.terminal.split",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+shift+d",
+    "command": "-workbench.view.debug"
+  },
+  // Move the terminal left, down and right
+  {
+    "key": "ctrl+alt+d",
+    "command": "workbench.action.positionPanelRight"
+  },
+  {
+    "key": "ctrl+alt+s",
+    "command": "workbench.action.positionPanelBottom"
+  },
+  {
+    "key": "ctrl+alt+a",
+    "command": "workbench.action.positionPanelLeft"
+  },
+  // Open a recent Workspace
+  {
+    "key": "ctrl+shift+o",
+    "command": "workbench.action.openRecent"
+  },
+  {
+    "key": "ctrl+shift+o",
+    "command": "-workbench.action.gotoSymbol"
+  },
+  {
+    "key": "ctrl+r",
+    "command": "-workbench.action.openRecent"
+  },
+  // Trigger GitHub Copilot suggestions
+  {
+    "key": "ctrl+shift+c",
+    "command": "github.copilot.generate",
+    "when": "editorTextFocus"
+  },
+  // Enable or disable GitHub Copilot
+  {
+    "key": "alt+shift+c",
+    "command": "github.copilot.toggleCopilot"
+  },
+  // Generate a commit message with GitHub Copilot
+  {
+    "key": "ctrl+alt+shift+c",
+    "command": "github.copilot.git.generateCommitMessage"
+  },
+  // Write documentation for the selected function or class
+  {
+    "key": "ctrl+alt+oem_period",
+    "command": "docs.write",
+    "when": "editorTextFocus && config.docwriter.hotkey.windows == 'Ctrl + .' && editorLangId =~ /typescript|javascript|python|php|java|c|cpp|csharp|dart|ruby|go|rust/"
+  },
+  {
+    "key": "ctrl+oem_period",
+    "command": "-docs.write",
+    "when": "editorTextFocus && config.docwriter.hotkey.windows == 'Ctrl + .' && editorLangId =~ /typescript|javascript|python|php|java|c|cpp|csharp|dart|ruby|go|rust/"
+  },
+  // Toggle the match case when performing a search
+  {
+    "key": "alt+c",
+    "command": "toggleFindCaseSensitive",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "alt+c c",
+    "command": "-extension.colorHelper.convert",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "alt+c p",
+    "command": "-extension.colorHelper.pick",
+    "when": "editorTextFocus"
+  },
+  //Compresses folder expansion
+  {
+    "key": "alt+shift+e",
+    "command": "workbench.files.action.collapseExplorerFolders"
+  },
+  // Reveal file explorer
+  {
+    "key": "ctrl+shift+e",
+    "command": "remote-wsl.revealInExplorer",
+    "when": "editorTextFocus && remoteName == 'wsl'"
+  },
+  // Switch between the file explorer and the file picker
+  {
+    "key": "alt+e",
+    "command": "workbench.view.explorer",
+    "when": "viewContainer.workbench.view.explorer.enabled"
+  },
+  {
+    "key": "alt+e",
+    "command": "workbench.action.quickOpenNavigatePreviousInFilePicker",
+    "when": "inFilesPicker && inQuickOpen"
+  },
+  {
+    "key": "ctrl+shift+e",
+    "command": "-workbench.view.explorer",
+    "when": "viewContainer.workbench.view.explorer.enabled"
+  },
+  {
+    "key": "ctrl+shift+e",
+    "command": "-workbench.action.quickOpenNavigatePreviousInFilePicker",
+    "when": "inFilesPicker && inQuickOpen"
+  },
+  // Restart TypeScript and ESLint server (install ryuta46.multi-command extension)
+  {
+    "key": "ctrl+shift+r",
+    "command": "extension.multiCommand.execute",
+    "interval": 100,
+    "args": {
+      "sequence": ["typescript.restartTsServer", "eslint.restart"]
+    }
+  },
+  // Format the file with the standard formatter (Prettier, for example) and then with ESLint
+  {
+    "key": "shift+alt+f",
+    "command": "extension.multiCommand.execute",
+    "interval": 100,
+    "args": {
+      "sequence": ["editor.action.formatDocument", "eslint.executeAutofix"]
+    },
+    "when": "editorTextFocus && !editorReadonly && !inCompositeEditor"
+  },
+  // Format file with ESLint
+  // {
+  //   "key": "shift+alt+d",
+  //   "command": "eslint.executeAutofix",
+  //   "when": "editorTextFocus && !editorReadonly && !inCompositeEditor"
+  // },
+  // Format file with standard formatter
+  // {
+  //   "key": "shift+alt+f",
+  //   "command": "editor.action.formatDocument",
+  //   "when": "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && !inCompositeEditor"
+  // },
+  // Add required imports
+  {
+    "key": "shift+alt+a",
+    "command": "editor.action.sourceAction",
+    "args": {
+      "kind": "source.addMissingImports",
+      "apply": "first"
+    }
+  },
+  // Remove unnecessary imports and organize them
+  {
+    "key": "shift+alt+s",
+    "command": "extension.multiCommand.execute",
+    "interval": 10,
+    "args": {
+      "sequence": [
+        "typescript.removeUnusedImports",
+        "editor.action.organizeImports",
+        "typescript.organizeImports",
+        "typescript.sortImports"
+      ]
+    },
+    "when": "editorTextFocus && !editorReadonly && !inCompositeEditor"
+  },
+  // Toggle to display function parameter names (install DominicVonk.parameter-hints extension)
+  {
+    "key": "alt+shift+p",
+    "command": "parameterHints.toggle"
+  },
+  // Break HTML tag into multiple lines (install dannyconnell.split-html-attributes extension)
+  {
+    "key": "shift+alt+x",
+    "command": "extension.splitHTMLAttributes",
+    "when": "editorTextFocus && !editorReadonly && !inCompositeEditor"
+  },
+  // Add or remove selected lines to the Git staging area
+  {
+    "key": "shift+alt+a",
+    "command": "git.stageSelectedRanges",
+    "when": "isInDiffEditor"
+  },
+  {
+    "key": "shift+alt+s",
+    "command": "git.unstageSelectedRanges",
+    "when": "isInDiffEditor"
+  },
+  // Toggle between continuous lines or line breaks at the limit of horizontal scrolling
+  {
+    "key": "shift+alt+z",
+    "command": "editor.action.toggleWordWrap",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "alt+z",
+    "command": "-editor.action.toggleWordWrap",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  // Attach a new remote container to VSCode
+  {
+    "key": "alt+a",
+    "command": "remote-containers.attachToRunningContainer"
+  },
+  // Expand or collapse block of code where the cursor is located
+  {
+    "key": "ctrl+shift+]",
+    "command": "editor.fold",
+    "when": "editorTextFocus && foldingEnabled"
+  },
+  {
+    "key": "ctrl+shift+\\",
+    "command": "editor.unfold",
+    "when": "editorTextFocus && foldingEnabled"
+  },
+  // Save file without formatting
+  {
+    "key": "ctrl+shift+s",
+    "command": "workbench.action.files.saveWithoutFormatting"
+  },
+  {
+    "key": "ctrl+shift+s",
+    "command": "-workbench.action.files.saveAs"
+  },
+  // Remove Markdown extension incompatibility with GitHub Copilot if installed
+  {
+    "key": "tab",
+    "command": "-markdown.extension.onTabKey",
+    "when": "editorTextFocus && !editorReadonly && !editorTabMovesFocus && !hasOtherSuggestions && !hasSnippetCompletions && !inSnippetMode && !suggestWidgetVisible && editorLangId == 'markdown'"
+  },
+  // Disable default Alt+Number commands
+  {
+    "key": "alt+1",
+    "command": "-workbench.action.openEditorAtIndex1"
+  },
+  {
+    "key": "alt+2",
+    "command": "-workbench.action.openEditorAtIndex2"
+  },
+  {
+    "key": "alt+3",
+    "command": "-workbench.action.openEditorAtIndex3"
+  },
+  {
+    "key": "alt+4",
+    "command": "-workbench.action.openEditorAtIndex4"
+  },
+  {
+    "key": "alt+5",
+    "command": "-workbench.action.openEditorAtIndex5"
+  },
+  {
+    "key": "alt+6",
+    "command": "-workbench.action.openEditorAtIndex6"
+  },
+  {
+    "key": "alt+7",
+    "command": "-workbench.action.openEditorAtIndex7"
+  },
+  {
+    "key": "alt+8",
+    "command": "-workbench.action.openEditorAtIndex8"
+  },
+  {
+    "key": "alt+9",
+    "command": "-workbench.action.openEditorAtIndex9"
+  },
+  // Customize Alt+Number commands and apply toggle for them
+  {
+    "key": "alt+1",
+    "command": "workbench.view.explorer"
+  },
+  {
+    "key": "alt+1",
+    "command": "workbench.action.toggleSidebarVisibility",
+    "when": "activeViewlet == 'workbench.view.explorer'"
+  },
+  {
+    "key": "alt+2",
+    "command": "workbench.view.scm"
+  },
+  {
+    "key": "alt+2",
+    "command": "workbench.action.toggleSidebarVisibility",
+    "when": "activeViewlet == 'workbench.view.scm'"
+  },
+  {
+    "key": "alt+3",
+    "command": "workbench.view.extensions"
+  },
+  {
+    "key": "alt+3",
+    "command": "workbench.action.toggleSidebarVisibility",
+    "when": "activeViewlet == 'workbench.view.extensions'"
+  },
+  {
+    "key": "alt+4",
+    "command": "workbench.view.search"
+  },
+  {
+    "key": "alt+4",
+    "command": "workbench.action.toggleSidebarVisibility",
+    "when": "activeViewlet == 'workbench.view.search'"
+  },
+  {
+    "key": "alt+5",
+    "command": "workbench.view.extension.rubberduck"
+  },
+  {
+    "key": "alt+5",
+    "command": "workbench.action.toggleSidebarVisibility",
+    "when": "activeViewlet == 'workbench.view.extension.rubberduck'"
+  },
+  {
+    "key": "alt+6",
+    "command": "workbench.view.debug"
+  },
+  {
+    "key": "alt+6",
+    "command": "workbench.action.toggleSidebarVisibility",
+    "when": "activeViewlet == 'workbench.view.debug'"
+  },
+  {
+    "key": "alt+7",
+    "command": "workbench.view.extension.dockerView"
+  },
+  {
+    "key": "alt+7",
+    "command": "workbench.action.toggleSidebarVisibility",
+    "when": "activeViewlet == 'workbench.view.extension.dockerView'"
+  },
+  {
+    "key": "alt+8",
+    "command": "workbench.view.remote"
+  },
+  {
+    "key": "alt+8",
+    "command": "workbench.action.toggleSidebarVisibility",
+    "when": "activeViewlet == 'workbench.view.remote'"
+  },
+  {
+    "key": "alt+9",
+    "command": "workbench.view.extension.gitlens"
+  },
+  {
+    "key": "alt+9",
+    "command": "workbench.action.toggleSidebarVisibility",
+    "when": "activeViewlet == 'workbench.view.extension.gitlens'"
+  }
+]

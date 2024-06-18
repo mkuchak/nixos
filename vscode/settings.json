@@ -1,0 +1,139 @@
+/*
+ * Ctrl+Shift+P > settings
+ * Preferences: Open Settings (JSON)
+ */
+ {
+  // Style and Theme
+  "workbench.colorTheme": "Sorcerer",
+  "workbench.iconTheme": "material-icon-theme",
+  "editor.fontFamily": "Rec Mono Casual, Codelia Ligatures", // https://drive.google.com/file/d/1wgKy3QuYQOGDZZj5S12Ryt84yeJee2JC https://drive.google.com/file/d/1iwEhhk3l8VEa3H3zLtYaMF526NSTn_wR
+  "editor.fontSize": 14,
+  "editor.lineHeight": 19,
+  "editor.fontWeight": "400",
+  "editor.fontLigatures": true,
+  "editor.rulers": [80, 120],
+  "editor.renderLineHighlight": "all",
+  "editor.cursorBlinking": "smooth",
+  "editor.semanticHighlighting.enabled": false,
+  "editor.scrollbar.vertical": "auto",
+  "editor.scrollbar.horizontal": "auto",
+  "window.titleBarStyle": "custom",
+
+  // Custom Style
+  "apc.electron": {
+    "titleBarStyle": "hiddenInset",
+    "frame": false
+  },
+  "apc.header": {
+    "height": 36
+  },
+  "apc.listRow": {
+    "height": 22
+  },
+  "apc.font.family": "Inter", // https://fonts.google.com/specimen/Inter
+  "apc.stylesheet": {
+    // ".titlebar-center": "display: none !important",
+    ".title-label > h2": "display: none",
+    ".editor-actions": "display: none"
+  },
+  "workbench.colorCustomizations": {
+    "[Sorcerer]": {
+      "titleBar.activeBackground": "#0e141a",
+      "titleBar.activeForeground": "#d1d6df",
+      "titleBar.inactiveBackground": "#0e141abd",
+      "titleBar.inactiveForeground": "#d1d6dfbd"
+    },
+    "parameterHints.hintBackground": "#25374a50",
+    "parameterHints.hintForeground": "#6e7d9a",
+    "titleBar.activeBackground": "#2596be",
+    "titleBar.activeForeground": "#ffffff",
+    "titleBar.inactiveBackground": "#004a72",
+    "titleBar.inactiveForeground": "#639db2"
+  },
+
+  // Behavior
+  "editor.mouseWheelZoom": true,
+  "explorer.compactFolders": false,
+  "explorer.confirmDragAndDrop": false,
+  "explorer.confirmDelete": false,
+  "security.workspace.trust.untrustedFiles": "open",
+  "workbench.editor.enablePreview": false,
+  "editor.lightbulb.enabled": "off",
+  "editor.insertSpaces": true,
+  "editor.tabSize": 2,
+
+  // Languages Behavior
+  "typescript.preferences.importModuleSpecifier": "non-relative",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "typescript.suggest.autoImports": true,
+  "javascript.preferences.importModuleSpecifier": "non-relative",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "javascript.suggest.autoImports": true,
+
+  // Formatting
+  "prettier.printWidth": 80, // esbenp.prettier-vscode
+  "cSpell.language": "en,pt,pt_BR", // streetsidesoftware.code-spell-checker
+  "splitHTMLAttributes.closingBracketOnNewLine": true, // dannyconnell.split-html-attributes
+  "scss.lint.unknownAtRules": "ignore",
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  // Organization
+  // "explorer.sortOrder": "foldersNestsFiles",
+  // "explorer.fileNesting.enabled": true,
+  // "explorer.fileNesting.patterns": {
+  //   "package.json": "package-lock*, pnpm-lock*, bun.lockb, nest*",
+  //   "docker*": ".docker*",
+  //   "nest*": "nest*",
+  //   "vite*": "vite*",
+  //   "tsconfig*": "tsconfig*,",
+  //   "prettier*": "prettier*",
+  //   ".eslint*": ".eslint*",
+  //   "tailwind.config*": "tailwind.config*, postcss.config*",
+  //   ".env*": ".env*"
+  // },
+  "console-ninja.featureSet": "Community",
+  "symbols.hidesExplorerArrows": false,
+  "editor.minimap.enabled": false,
+  "workbench.editor.labelFormat": "short",
+  "workbench.startupEditor": "none",
+  "window.commandCenter": false,
+  "workbench.layoutControl.enabled": false,
+  "parameterHints.enabled": false,
+  "terminal.integrated.env.linux": {},
+  "terminal.integrated.env.windows": {},
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": false,
+    "markdown": true,
+    "scminput": false
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "prisma.showPrismaDataPlatformNotification": false,
+  "github.copilot.editor.enableAutoCompletions": true,
+  "window.customTitleBarVisibility": "auto"
+}
