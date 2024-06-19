@@ -111,16 +111,16 @@
    fish warp-terminal
    # docker_26 docker-compose kubernetes
    bun deno nodejs_22 corepack_22 # nodePackages_latest.pnpm nodePackages_latest.wrangler nodePackages_latest.vercel
-   # go python3 jdk rustc
+   # go python3 jdk rustup cargo-cachecargo-expand
    vscode # typora netbeans android-studio
-   # insomnia dbeaver zeal cloudflared
+   # insomnia dbeaver zeal cloudflared # httpie-desktop # unstable
    google-chrome # tor-browser
    # qbittorrent vlc bitwarden-desktop
    # obs-studio kooha
    # davinci-resolve gimp-with-plugins audacity pavucontrol
    # godot_4 unityhub
    # discord slack
-   # xdg-desktop-portal-hyprland
+   # xdg-desktop-portal-hyprland alejandra
 
    # Kooha is a simple screen recoder that save as GIF
    # Zeal is an offline documentation of a variety of languages, libraries and frameworks
