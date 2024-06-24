@@ -306,6 +306,21 @@
     "key": "alt+shift+c",
     "command": "github.copilot.toggleCopilot"
   },
+  // Enable or disable Codeium
+  {
+    "key": "alt+shift+v",
+    "command": "codeium.toggleAutocompleteGlobally"
+  },
+  // Enable or disable GitHub Copilot and Codeium
+  // {
+  //   "key": "alt+shift+c",
+  //   "command": "extension.multiCommand.execute",
+  //   "interval": 100,
+  //   "args": {
+  //     "sequence": ["github.copilot.toggleCopilot", "codeium.toggleAutocompleteGlobally"]
+  //   },
+  //   "when": "editorTextFocus && !editorReadonly && !inCompositeEditor"
+  // },
   // Generate a commit message with GitHub Copilot
   {
     "key": "ctrl+alt+shift+c",
