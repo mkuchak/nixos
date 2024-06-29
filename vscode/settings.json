@@ -52,6 +52,7 @@
   },
 
   // Behavior
+  "editor.renderWhitespace": "all",
   "editor.mouseWheelZoom": true,
   "explorer.compactFolders": false,
   "explorer.confirmDragAndDrop": false,
@@ -135,5 +136,12 @@
   },
   "prisma.showPrismaDataPlatformNotification": false,
   "github.copilot.editor.enableAutoCompletions": true,
-  "window.customTitleBarVisibility": "auto"
+  "window.customTitleBarVisibility": "auto",
+  "workbench.activityBar.location": "hidden",
+  "git.confirmSync": false,
+  "codeium.enableConfig": {
+    "*": false
+  },
+  "codeium.enableCodeLens": false,
+  "remote.autoForwardPortsSource": "hybrid"
 }
