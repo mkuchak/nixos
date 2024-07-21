@@ -138,9 +138,11 @@
   "github.copilot.editor.enableAutoCompletions": true,
   "window.customTitleBarVisibility": "auto",
   "workbench.activityBar.location": "hidden",
+  "gitlens.codeLens.authors.enabled": false,
+  "gitlens.codeLens.recentChange.enabled": false,
   "git.confirmSync": false,
   "codeium.enableConfig": {
-    "*": false
+    "*": true
   },
   "codeium.enableCodeLens": false,
   "remote.autoForwardPortsSource": "hybrid"
