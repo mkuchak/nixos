@@ -137,13 +137,13 @@
   "prisma.showPrismaDataPlatformNotification": false,
   "github.copilot.editor.enableAutoCompletions": true,
   "window.customTitleBarVisibility": "auto",
-  "workbench.activityBar.location": "hidden",
   "gitlens.codeLens.authors.enabled": false,
   "gitlens.codeLens.recentChange.enabled": false,
   "git.confirmSync": false,
   "codeium.enableConfig": {
-    "*": true
+    "*": false
   },
   "codeium.enableCodeLens": false,
-  "remote.autoForwardPortsSource": "hybrid"
+  "remote.autoForwardPortsSource": "hybrid",
+  "workbench.activityBar.location": "hidden"
 }

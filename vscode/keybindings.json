@@ -406,7 +406,7 @@
   },
   // Format file with ESLint
   // {
-  //   "key": "shift+alt+d",
+  //   "key": "shift+alt+f",
   //   "command": "eslint.executeAutofix",
   //   "when": "editorTextFocus && !editorReadonly && !inCompositeEditor"
   // },
@@ -562,12 +562,12 @@
   },
   {
     "key": "alt+3",
-    "command": "workbench.view.extensions"
+    "command": "workbench.view.debug"
   },
   {
     "key": "alt+3",
     "command": "workbench.action.toggleSidebarVisibility",
-    "when": "activeViewlet == 'workbench.view.extensions'"
+    "when": "activeViewlet == 'workbench.view.debug'"
   },
   {
     "key": "alt+4",
@@ -580,21 +580,21 @@
   },
   {
     "key": "alt+5",
-    "command": "workbench.view.extension.rubberduck"
+    "command": "workbench.view.extensions"
   },
   {
     "key": "alt+5",
     "command": "workbench.action.toggleSidebarVisibility",
+    "when": "activeViewlet == 'workbench.view.extensions'"
+  },
+  {
+    "key": "alt+6",
+    "command": "workbench.view.extension.rubberduck",
     "when": "activeViewlet == 'workbench.view.extension.rubberduck'"
   },
   {
     "key": "alt+6",
-    "command": "workbench.view.debug"
-  },
-  {
-    "key": "alt+6",
-    "command": "workbench.action.toggleSidebarVisibility",
-    "when": "activeViewlet == 'workbench.view.debug'"
+    "command": "workbench.action.toggleSidebarVisibility"
   },
   {
     "key": "alt+7",
