@@ -1,0 +1,212 @@
+/*
+ * Ctrl+Shift+P > snippets > Preferences: Configure User Snippets
+ * next.code-snippets.json
+ */
+ {
+  "clsx": {
+    "prefix": "xx",
+    "body": [
+      "className={clsx(",
+      "'$0',",
+      "'',",
+      ")}"
+    ],
+    "description": "Join classnames: clsx library"
+  },
+  "className": {
+    "prefix": "cc",
+    "body": [
+      "className=\"$0\""
+    ],
+    "description": "React className"
+  },
+  "style": {
+    "prefix": "ww",
+    "body": [
+      "style={tw`$0`}"
+    ],
+    "description": "React Native style"
+  },
+  "tailwind": {
+    "prefix": "ss",
+    "body": [
+      "style={tw(\"$0\")}"
+    ],
+    "description": "React Native style"
+  },
+  "Next.js Component": {
+    "prefix": "nextComponent",
+    "body": [
+      "export type ${1:${TM_FILENAME_BASE/(^|-)(.)/${2:/upcase}/g}}Props = {",
+      "  ",
+      "};",
+      "",
+      "export function ${1:${TM_FILENAME_BASE/(^|-)(.)/${2:/upcase}/g}} ({}: ${1:${TM_FILENAME_BASE/(^|-)(.)/${2:/upcase}/g}}Props) {",
+      "  return (",
+      "    <>${2}</>",
+      "  )",
+      "}",
+      ""
+    ],
+    "description": "Next.js Component"
+  },
+  "Next.js Page": {
+    "prefix": "nextPage",
+    "body": [
+      "export default async function Page({ params }: { params: {  } }): Promise<JSX.Element> {",
+      "  return (",
+      "    <>${2}</>",
+      "  )",
+      "}",
+      ""
+    ],
+    "description": "Next.js Page"
+  },
+  "Next.js Server Page": {
+    "prefix": "nextServer",
+    "body": [
+      "import type { GetServerSideProps } from 'next'",
+      "",
+      "export default function ${1:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}} ({ cookies }: any) {",
+      "  return (",
+      "    <>",
+      "      <pre>{JSON.stringify(cookies, null, 2)}$0</pre>",
+      "    </>",
+      "  )",
+      "}",
+      "",
+      "export const getServerSideProps: GetServerSideProps = async ({",
+      "  params,",
+      "  req,",
+      "  query",
+      "}) => {",
+      "  // const { slug, id } = params",
+      "  // const { page, perPage } = query",
+      "",
+      "  const { cookies } = req // { token, refreshToken } = req.cookies",
+      "  return {",
+      "    // notFound: true,",
+      "    props: { cookies }",
+      "  }",
+      "}",
+      ""
+    ],
+    "description": "Next.js Server Page"
+  },
+  "Next.js Static Page": {
+    "prefix": "nextStatic",
+    "body": [
+      "import type { GetStaticPaths, GetStaticProps } from 'next'",
+      "import { ParsedUrlQuery } from 'querystring'",
+      "",
+      "export default function ${1:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}} ({ id, currentHour }: any) {",
+      "  return (",
+      "    <>",
+      "      <h1>Page ID: {id}</h1>",
+      "      <h2>Current hour: {currentHour}$0</h2>",
+      "    </>",
+      "  )",
+      "}",
+      "",
+      "export const getStaticPaths: GetStaticPaths = async () => {",
+      "  return {",
+      "    paths: [",
+      "      // { params: { id: '1' } },",
+      "      // { params: { id: '2' } },",
+      "      // { params: { id: '3' } }",
+      "    ],",
+      "    // fallback: false // false pre-rendered just the paths and the rest is never showed",
+      "    // fallback: true // true forces paths to be pre-rendered and the rest is generated on demand",
+      "    fallback: 'blocking' // blocking does not need to have paths because all paths are generated on demand",
+      "  }",
+      "}",
+      "",
+      "export const getStaticProps: GetStaticProps = async ({ params }) => {",
+      "  const { id } = params as ParsedUrlQuery",
+      "  const currentHour = new Date().toLocaleTimeString('en-US', {",
+      "    hour: '2-digit',",
+      "    minute: '2-digit',",
+      "    second: '2-digit',",
+      "    hour12: false",
+      "  })",
+      "",
+      "  return {",
+      "    // notFound: true,",
+      "    // redirect: {",
+      "    //   destination: '/',",
+      "    //   permanent: false",
+      "    // },",
+      "    props: { id, currentHour },",
+      "    revalidate: 60 * 1 // 1 minute",
+      "  }",
+      "}",
+      ""
+    ],
+    "description": "Next.js Static Page"
+  },
+  "Next.js API": {
+    "prefix": "nextAPI",
+    "body": [
+      "import type { NextApiRequest, NextApiResponse } from 'next'",
+      "",
+      "type ResponseData = any;",
+      "",
+      "export default async function ${1:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}} (",
+      "  req: NextApiRequest,",
+      "  res: NextApiResponse<ResponseData>",
+      ") {",
+      "  const { id, page } = req.query // /5?page=20",
+      "  const { method, url, cookies } = req",
+      "",
+      "  // res.setHeader('Cache-Control', 's-maxage=30, stale-while-revalidate') // cache for 30 seconds",
+      "",
+      "  res.status(200).json({",
+      "    message: '${2:Hello, API!}',",
+      "    id, // 5",
+      "    page, // 20",
+      "    method,",
+      "    url,",
+      "    cookies,",
+      "    headers: req.headers",
+      "  })",
+      "  // res.status(500).send({ error: 'failed to fetch data' })",
+      "  // res.redirect(307, '/')",
+      "}",
+      ""
+    ],
+    "description": "Next.js API"
+  },
+  "Next.js Context": {
+    "prefix": "nextContext",
+    "body": [
+      "import { createContext, PropsWithChildren, useContext } from 'react'",
+      "",
+      "interface ${TM_FILENAME_BASE}Props {${1:",
+      "  // doSomething(): Promise<void>;",
+      "  // isTrue: boolean;",
+      "  // info: Info | undefined;",
+      "}}",
+      "",
+      "export const ${TM_FILENAME_BASE} = createContext({} as ${TM_FILENAME_BASE}Props)",
+      "",
+      "export function ${TM_FILENAME_BASE/([A-Z]*[a-z]*$)//g}Provider({ children }: PropsWithChildren) {${2:",
+      "  // const [info, setInfo] = useState<Info>()",
+      "  // const [isTrue, setIsTrue] = useState(false)",
+      "  // const doSomething = async () => {}",
+      "  $0",
+      "",
+      "  return (",
+      "    <${TM_FILENAME_BASE}.Provider value={{${3: /* doSomething, isTrue, info */ }}}>",
+      "      {children}",
+      "    </${TM_FILENAME_BASE}.Provider>",
+      "  )",
+      "}",
+      "",
+      "export function use${TM_FILENAME_BASE/([A-Z]*[a-z]*$)//g}() {",
+      "  return useContext(${TM_FILENAME_BASE})",
+      "}",
+      ""
+    ],
+    "description": "Next.js Context"
+  }
+}
