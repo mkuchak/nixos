@@ -3,6 +3,22 @@
  * Preferences: Open Keyboard Shortcuts (JSON)
  */
  [
+  // AI commands
+  {
+    "key": "ctrl+l",
+    "command": "workbench.action.chat.newChat",
+    "when": "(chatIsEnabled && inChat) || terminalFocus"
+  },
+  {
+    "key": "ctrl+shift+alt+enter",
+    "command": "editor.action.inlineDiffs.acceptAll",
+    "when": "editorTextFocus && (arbitrary function)"
+  },
+  {
+    "key": "ctrl+enter",
+    "command": "-editor.action.inlineDiffs.acceptAll",
+    "when": "editorTextFocus && (arbitrary function)"
+  },
   // Move the cursor and select between CamelCase words
   {
     "key": "alt+right",
